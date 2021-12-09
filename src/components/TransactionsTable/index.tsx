@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { TransactionContext } from "../../TransactionContext";
+import { TransactionsContext } from "../../TransactionsContext";
 import { Container } from "./styles";
 
 export function TransactionsTable(){
-    const transactions = useContext(TransactionContext)
+    const {transactions} = useContext(TransactionsContext)
 
     return(
         <Container>
@@ -29,7 +29,7 @@ export function TransactionsTable(){
                         <td>{transaction.category}</td>
                         <td>
                             {new Intl.DateTimeFormat("pt-BR").format(
-                                new Date(transaction.creatAt)
+                                new Date(transaction.createdAt)
                             )}
                         </td>
                     </tr>
